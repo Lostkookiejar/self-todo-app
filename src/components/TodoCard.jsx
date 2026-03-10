@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { Button, Card } from "react-bootstrap";
 import TodoContext from "../contexts/TodoContext";
-
 export default function TodoCard({ todo }) {
   const completed = todo.completed;
   const border = completed ? "success" : "danger";
@@ -60,6 +59,9 @@ export default function TodoCard({ todo }) {
           </Button>
           <Button onClick={deleteTodo} variant="danger" className="ms-2">
             <i className="bi bi-trash3"></i>
+          </Button>
+          <Button variant="secondary" href={`todo/${todo.id}`} className="ms-2">
+            <i className="bi bi-pencil"></i>
           </Button>
         </Card.Body>
       </Card>
